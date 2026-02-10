@@ -82,7 +82,10 @@ export default function Home() {
             <div className="about-block">
               <div className="about-title">
                 <span>About us</span>
-                <span className="about-line" />
+                <span
+                  className="about-line border-reveal"
+                  data-border-reveal
+                />
               </div>
               <p>
                 Established in 2025, the company builds on a strong foundation
@@ -118,7 +121,7 @@ export default function Home() {
               <img src={serviceOne} alt="Tipping trailers" />
             </div>
           </div>
-          <div className="service-meta">
+          <div className="service-meta border-reveal-bottom" data-border-reveal>
               <div>
                 <h3>Tipping Trailers</h3>
                 <p>
@@ -140,7 +143,7 @@ export default function Home() {
             </div>
             
           </div>
-          <div className="service-meta">
+          <div className="service-meta border-reveal-bottom" data-border-reveal>
               <div>
                 <h3>Water Tanker</h3>
                 <p>
@@ -162,7 +165,7 @@ export default function Home() {
             </div>
             
           </div>
-          <div className="service-meta">
+          <div className="service-meta border-reveal-bottom" data-border-reveal>
               <div>
                 <h3>Cement Bulker</h3>
                 <p>
@@ -520,7 +523,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="footer-divider" />
+          <div className="footer-divider border-reveal" data-border-reveal />
 
           <div className="footer-bottom">
             <span>
