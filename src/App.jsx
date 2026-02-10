@@ -1,4 +1,6 @@
+import { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Lenis from 'lenis'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -8,6 +10,14 @@ import Contact from './pages/Contact'
 import Intelligence from './pages/Intelligence'
 
 function App() {
+  useEffect(() => {
+    const lenis = new Lenis({ autoRaf: true })
+
+    return () => {
+      lenis.destroy()
+    }
+  }, [])
+
   return (
     <BrowserRouter>
       <Navbar />
