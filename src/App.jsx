@@ -17,11 +17,35 @@ function BorderRevealObserver() {
       document.querySelectorAll('[data-border-reveal]')
     )
 
-    if (targets.length === 0) return undefined
+    const serviceTargets = Array.from(
+      document.querySelectorAll('.service-reveal')
+    )
+
+    const revealTargets = Array.from(
+      document.querySelectorAll('[data-reveal]')
+    )
+
+    if (
+      targets.length === 0 &&
+      serviceTargets.length === 0 &&
+      revealTargets.length === 0
+    )
+      return undefined
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
+          if (entry.target.classList.contains('service-reveal')) {
+            entry.target.classList.toggle('is-revealed', entry.isIntersecting)
+            entry.target.classList.toggle('is-hidden', !entry.isIntersecting)
+            return
+          }
+
+          if (entry.target.hasAttribute('data-reveal')) {
+            entry.target.classList.toggle('is-revealed', entry.isIntersecting)
+            return
+          }
+
           entry.target.classList.toggle('is-revealed', entry.isIntersecting)
         })
       },
@@ -31,6 +55,16 @@ function BorderRevealObserver() {
     )
 
     targets.forEach((target) => {
+      target.classList.remove('is-revealed')
+      observer.observe(target)
+    })
+
+    serviceTargets.forEach((target) => {
+      target.classList.remove('is-revealed', 'is-hidden')
+      observer.observe(target)
+    })
+
+    revealTargets.forEach((target) => {
       target.classList.remove('is-revealed')
       observer.observe(target)
     })

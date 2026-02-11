@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.vite/
+.tools/
+.tmp/
+_video_frames/service/
+_video_frames/service_hi/
+*.log
+*.tmp

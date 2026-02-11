@@ -278,6 +278,7 @@ a {
     margin: 48px auto 34px;
     max-width: 830px;
     text-align: center;
+    justify-content: center;
     font-size: 48px;
     line-height: 1.35;
     font-weight: 500;
@@ -428,6 +429,53 @@ a {
     align-items: flex-end;
 }
 
+.service-reveal {
+  --reveal-y: 80px;
+  --reveal-clip: inset(30% 0% 0% 0%);
+}
+
+@keyframes serviceRevealIn {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-y));
+    clip-path: var(--reveal-clip);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0% 0% 0% 0%);
+  }
+}
+
+@keyframes serviceRevealOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0% 0% 0% 0%);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(var(--reveal-y));
+    clip-path: var(--reveal-clip);
+  }
+}
+
+.service-reveal .service-image img {
+  opacity: 0;
+  transform: translateY(var(--reveal-y));
+  clip-path: var(--reveal-clip);
+  transition: none;
+  will-change: transform, clip-path, opacity;
+}
+
+.service-reveal.is-revealed .service-image img {
+  animation: serviceRevealIn 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.service-reveal.is-hidden .service-image img {
+  animation: serviceRevealOut 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
 
 .service-image {
   display: flex;
@@ -531,6 +579,14 @@ a {
   background: rgba(12, 18, 60, 0.88);
 }
 
+.hse-dotgrid {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
 .hse-angle {
   position: absolute;
   left: 0;
@@ -632,6 +688,23 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 6px 14px rgba(5, 10, 35, 0.35);
   z-index: 1;
+}
+
+.hse-tile--raised {
+  --tile-raise: -18px;
+}
+
+.reveal-fade-up {
+  --tile-raise: 0px;
+  opacity: 0;
+  transform: translateY(calc(28px + var(--tile-raise)));
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  will-change: transform, opacity;
+}
+
+.reveal-fade-up.is-revealed {
+  opacity: 1;
+  transform: translateY(var(--tile-raise));
 }
 
 .hse-tile img {

@@ -22,8 +22,37 @@ import iconYoutube from '../../assets/Youtube.png'
 import hseGradient from '../../assets/bg-gradient.png'
 import arrowWhite from '../../assets/btn-arrow-white.png'
 import arrowBlack from '../../assets/btn-arrow-black.png'
+import { motion } from 'motion/react'
+import BlurText from '../components/reactbits/BlurText/BlurText'
+import DotGrid from '../components/reactbits/DotGrid/DotGrid'
 
 export default function Home() {
+  const revealUp = {
+    hidden: { opacity: 0, y: 24 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.22, 0.61, 0.36, 1] }
+    }
+  }
+
+  const cardStagger = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.12, delayChildren: 0.05 }
+    }
+  }
+
+  const cardReveal = {
+    hidden: { opacity: 0, y: 18, scale: 0.98 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { duration: 0.5, ease: [0.22, 0.61, 0.36, 1] }
+    }
+  }
+
   return (
     <>
       <section
@@ -53,27 +82,42 @@ export default function Home() {
       <section className="service-section">
         <div className="section-inner">
           <div className="section-top">
-            <h2>
+            <motion.h2
+              variants={revealUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.5, once: false }}
+            >
               Build to hold
               <br />
               Ambition
-            </h2>
-            <div className="stat-cards">
-              <div className="stat-card">
+            </motion.h2>
+            <motion.div
+              className="stat-cards"
+              variants={cardStagger}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.4, once: false }}
+            >
+              <motion.div className="stat-card" variants={cardReveal}>
                 <div className="stat-value">150+</div>
                 <div className="stat-label">Lorem ipsum</div>
-              </div>
-              <div className="stat-card">
+              </motion.div>
+              <motion.div className="stat-card" variants={cardReveal}>
                 <div className="stat-value">150+</div>
                 <div className="stat-label">Lorem ipsum</div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
 
-          <p className="section-lead">
-            Our water tanker services redefine reliability through a seamless
-            blend of efficiency, safety, and performance.
-          </p>
+          <BlurText
+            className="section-lead"
+            text="Our water tanker services redefine reliability through a seamless blend of efficiency, safety, and performance."
+            delay={80}
+            animateBy="words"
+            direction="top"
+            threshold={0.25}
+          />
 
           <div className="section-bottom">
             <div className="truck-wrap">
@@ -116,7 +160,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="service-card">
+          <div className="service-card service-reveal">
             <div className="service-image">
               <img src={serviceOne} alt="Tipping trailers" />
             </div>
@@ -137,7 +181,7 @@ export default function Home() {
               </button>
             </div>
 
-          <div className="service-card">
+          <div className="service-card service-reveal">
             <div className="service-image">
               <img src={serviceTwo} alt="Water tanker" />
             </div>
@@ -159,7 +203,7 @@ export default function Home() {
               </button>
             </div>
 
-          <div className="service-card">
+          <div className="service-card service-reveal">
             <div className="service-image">
               <img src={hse7} alt="Cement bulker" />
             </div>
@@ -185,6 +229,20 @@ export default function Home() {
 
       <section className="hse-section" style={{ backgroundImage: `url(${hseBg})` }}>
         <div className="hse-angle" aria-hidden="true" />
+        <DotGrid
+          className="hse-dotgrid"
+          dotSize={6}
+          gap={32}
+          baseColor="#1f2b6d"
+          activeColor="#9fb5ff"
+          proximity={140}
+          speedTrigger={120}
+          shockRadius={220}
+          shockStrength={4}
+          maxSpeed={4200}
+          resistance={850}
+          returnDuration={1.3}
+        />
         <div className="hse-slat hse-slat-left" aria-hidden="true">
           <img src={hseLeft} alt="" />
         </div>
@@ -210,25 +268,25 @@ export default function Home() {
           </div>
 
           <div className="hse-gallery">
-            <div className="hse-tile hse-img-1">
+            <div className="hse-tile hse-img-1 reveal-fade-up" data-reveal>
               <img src={hse1} alt="HSE gallery 1" />
             </div>
-            <div className="hse-tile hse-img-2">
+            <div className="hse-tile hse-img-2 hse-tile--raised reveal-fade-up" data-reveal>
               <img src={hse2} alt="HSE gallery 2" />
             </div>
-            <div className="hse-tile hse-img-3">
+            <div className="hse-tile hse-img-3 reveal-fade-up" data-reveal>
               <img src={hse3} alt="HSE gallery 3" />
             </div>
-            <div className="hse-tile hse-img-4">
+            <div className="hse-tile hse-img-4 reveal-fade-up" data-reveal>
               <img src={hse4} alt="HSE gallery 4" />
             </div>
-            <div className="hse-tile hse-img-5">
+            <div className="hse-tile hse-img-5 reveal-fade-up" data-reveal>
               <img src={hse5} alt="HSE gallery 5" />
             </div>
-            <div className="hse-tile hse-img-6 hse-cta-tile">
+            <div className="hse-tile hse-img-6 hse-cta-tile reveal-fade-up" data-reveal>
               <img src={hse6} alt="HSE gallery 6" />
             </div>
-            <div className="hse-tile hse-img-7">
+            <div className="hse-tile hse-img-7 reveal-fade-up" data-reveal>
               <img src={hse7} alt="HSE gallery 7" />
             </div>
             <div
