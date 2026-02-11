@@ -1,4 +1,4 @@
-import heroImg from '../../assets/Hero-Banner.jpg'
+import heroVideo from '../../assets/Dubai, UAE.mp4'
 import truckImg from '../../assets/drawing-truck.png'
 import serviceOne from '../../assets/our-serivce-1.jpg'
 import serviceTwo from '../../assets/our-serivce-2.jpg'
@@ -49,10 +49,15 @@ export default function Home() {
 
   return (
     <>
-      <section
-        className="home-hero"
-        style={{ backgroundImage: `url(${heroImg})` }}
-      >
+      <section className="home-hero">
+        <video
+          className="hero-video"
+          src={heroVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
         <div className="hero-overlay" />
         <div className="hero-content">
           <div className="hero-left">

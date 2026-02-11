@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom'
 import footerLogo from '../../assets/ayro-footer-logo.png'
 import iconFacebook from '../../assets/Facebook.png'
 import iconInstagram from '../../assets/Instagram.png'
@@ -7,147 +8,155 @@ import iconYoutube from '../../assets/Youtube.png'
 import arrowBlack from '../../assets/btn-arrow-black.png'
 
 export default function Footer() {
+  const location = useLocation()
+  const hideContact = location.pathname === '/contact'
+  const hideFaq = location.pathname === '/contact'
+
   return (
     <>
-      <section className="faq-section">
-        <div className="faq-inner">
-          <div className="faq-left">
-            <span className="faq-label">(FAQs)</span>
-            <h2>
-              Everything you may
-              <br />
-              need to know
-            </h2>
-            <p>
-              All insights into our expertise provided in easily digestible
-              nuggets. No question too big or small - ask away!
-            </p>
-            <button className="faq-cta" type="button">
-              More Question
-              <span className="faq-dot">
-                <img src={arrowBlack} alt="" />
-              </span>
-            </button>
-          </div>
+      {!hideFaq && (
+        <section className="faq-section">
+          <div className="faq-inner">
+            <div className="faq-left">
+              <span className="faq-label">(FAQs)</span>
+              <h2>
+                Everything you may
+                <br />
+                need to know
+              </h2>
+              <p>
+                All insights into our expertise provided in easily digestible
+                nuggets. No question too big or small - ask away!
+              </p>
+              <button className="faq-cta" type="button">
+                More Question
+                <span className="faq-dot">
+                  <img src={arrowBlack} alt="" />
+                </span>
+              </button>
+            </div>
 
-          <div className="faq-right">
-            <div className="faq-card">
-              <div className="faq-item active">
-                <div className="faq-question">
-                  <span className="faq-icon">Ã—</span>
-                  <span>What tanker capacities are available?</span>
+            <div className="faq-right">
+              <div className="faq-card">
+                <div className="faq-item active">
+                  <div className="faq-question">
+                    <span className="faq-icon">Ã—</span>
+                    <span>What tanker capacities are available?</span>
+                  </div>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a type
+                    specimen book.
+                  </p>
                 </div>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book.
-                </p>
-              </div>
-              <div className="faq-item">
-                <div className="faq-question">
-                  <span className="faq-icon">+</span>
-                  <span>
-                    What type of cement transportation services do you offer?
-                  </span>
+                <div className="faq-item">
+                  <div className="faq-question">
+                    <span className="faq-icon">+</span>
+                    <span>
+                      What type of cement transportation services do you offer?
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="faq-item">
-                <div className="faq-question">
-                  <span className="faq-icon">+</span>
-                  <span>
-                    Are your cement transport operations monitored and tracked?
-                  </span>
+                <div className="faq-item">
+                  <div className="faq-question">
+                    <span className="faq-icon">+</span>
+                    <span>
+                      Are your cement transport operations monitored and tracked?
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="faq-item">
-                <div className="faq-question">
-                  <span className="faq-icon">+</span>
-                  <span>Do you supply potable and non-potable water?</span>
+                <div className="faq-item">
+                  <div className="faq-question">
+                    <span className="faq-icon">+</span>
+                    <span>Do you supply potable and non-potable water?</span>
+                  </div>
                 </div>
-              </div>
-              <div className="faq-item">
-                <div className="faq-question">
-                  <span className="faq-icon">+</span>
-                  <span>
-                    What materials can be transported using your tipping
-                    trailers?
-                  </span>
+                <div className="faq-item">
+                  <div className="faq-question">
+                    <span className="faq-icon">+</span>
+                    <span>
+                      What materials can be transported using your tipping
+                      trailers?
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="faq-item">
-                <div className="faq-question">
-                  <span className="faq-icon">+</span>
-                  <span>What is the load capacity of your tipping trailers?</span>
+                <div className="faq-item">
+                  <div className="faq-question">
+                    <span className="faq-icon">+</span>
+                    <span>What is the load capacity of your tipping trailers?</span>
+                  </div>
                 </div>
-              </div>
-              <div className="faq-item">
-                <div className="faq-question">
-                  <span className="faq-icon">+</span>
-                  <span>How do you ensure safety during loading and unloading?</span>
+                <div className="faq-item">
+                  <div className="faq-question">
+                    <span className="faq-icon">+</span>
+                    <span>How do you ensure safety during loading and unloading?</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      <section className="contact-section">
-        <div className="contact-inner">
-          <div className="contact-left">
-            <h2>
-              Send us
-              <br />
-              your details
-            </h2>
-            <p>
-              We're excited to connect with you! Fill out the form below, and
-              let's embark on the journey build your dream office space!
-            </p>
-          </div>
-
-          <form className="contact-form">
-            <div className="contact-row">
-              <label>
-                Name
-                <input type="text" />
-              </label>
-              <label>
-                Last Name
-                <input type="text" />
-              </label>
+      {!hideContact && (
+        <section className="contact-section">
+          <div className="contact-inner">
+            <div className="contact-left">
+              <h2>
+                Send us
+                <br />
+                your details
+              </h2>
+              <p>
+                We're excited to connect with you! Fill out the form below, and
+                let's embark on the journey build your dream office space!
+              </p>
             </div>
 
-            <label>
-              Email
-              <input type="email" />
-            </label>
+            <form className="contact-form">
+              <div className="contact-row">
+                <label>
+                  Name
+                  <input type="text" />
+                </label>
+                <label>
+                  Last Name
+                  <input type="text" />
+                </label>
+              </div>
 
-            <label>
-              Tanker
-              <input type="text" />
-            </label>
+              <label>
+                Email
+                <input type="email" />
+              </label>
 
-            <label>
-              Phone No.
-              <input type="tel" />
-            </label>
+              <label>
+                Tanker
+                <input type="text" />
+              </label>
 
-            <label>
-              Message
-              <textarea rows="4" />
-            </label>
+              <label>
+                Phone No.
+                <input type="tel" />
+              </label>
 
-            <button className="contact-submit" type="button">
-              Submit
-              <span className="contact-dot">
-                <img src={arrowBlack} alt="" />
-              </span>
-            </button>
-          </form>
-        </div>
-      </section>
+              <label>
+                Message
+                <textarea rows="4" />
+              </label>
+
+              <button className="contact-submit" type="button">
+                Submit
+                <span className="contact-dot">
+                  <img src={arrowBlack} alt="" />
+                </span>
+              </button>
+            </form>
+          </div>
+        </section>
+      )}
 
       <footer className="site-footer">
         <div className="footer-inner">
