@@ -1770,6 +1770,7 @@ max-width: 1275px;
 @media (max-width: 900px) {
   .inner-hero {
     padding: 120px 20px 70px;
+    background-size: cover !important;
   }
 
   .inner-hero-grid {
