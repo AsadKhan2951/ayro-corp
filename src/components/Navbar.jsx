@@ -1,8 +1,23 @@
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import logo from '../../assets/ayro-corp-logo.png'
 import arrowWhite from '../../assets/btn-arrow-white.png'
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const location = useLocation()
+
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [location.pathname])
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [menuOpen])
+
   return (
     <nav className="site-nav">
       <div className="nav-inner">
@@ -22,7 +37,7 @@ export default function Navbar() {
             </div>
           </div>
           <Link className="nav-link intelligence" to="/intelligence">
-            <span className="nav-star">✦</span>
+            <span className="nav-star">*</span>
             Ayro Intelligence
           </Link>
           <Link className="nav-link" to="/contact">Contact</Link>
@@ -33,8 +48,53 @@ export default function Navbar() {
             <img src={arrowWhite} alt="" />
           </span>
         </Link>
+        <button
+          className={`nav-toggle ${menuOpen ? 'is-open' : ''}`}
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen((prev) => !prev)}
+        >
+          <span />
+          <span />
+        </button>
+      </div>
+
+      <div className={`mobile-menu ${menuOpen ? 'is-open' : ''}`}>
+        <div className="mobile-menu-header">
+          <img src={logo} alt="Ayro Corp" />
+          <button
+            className="mobile-close"
+            type="button"
+            aria-label="Close menu"
+            onClick={() => setMenuOpen(false)}
+          >
+            x
+          </button>
+        </div>
+        <div className="mobile-menu-body">
+          <Link to="/" className="mobile-link">Home</Link>
+          <div className="mobile-divider" />
+          <Link to="/about" className="mobile-link">About</Link>
+          <div className="mobile-divider" />
+          <div className="mobile-group">
+            <span className="mobile-label">Services</span>
+            <Link to="/services" className="mobile-sublink">All</Link>
+            <Link to="/trailers" className="mobile-sublink">Tipping Trailers</Link>
+          </div>
+          <div className="mobile-divider" />
+          <Link to="/intelligence" className="mobile-link">Ayro Intelligence</Link>
+          <div className="mobile-divider" />
+          <Link to="/contact" className="mobile-link">Contact</Link>
+        </div>
+        <div className="mobile-menu-footer">
+          <Link className="mobile-cta" to="/contact">
+            Contact Us
+          </Link>
+        </div>
       </div>
     </nav>
   )
 }
+
 
