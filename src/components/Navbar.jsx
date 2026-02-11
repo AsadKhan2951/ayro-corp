@@ -12,7 +12,15 @@ export default function Navbar() {
         <div className="nav-links">
           <Link className="nav-link" to="/">Home</Link>
           <Link className="nav-link" to="/about">About</Link>
-          <Link className="nav-link" to="/services">Our Services +</Link>
+          <div className="nav-dropdown">
+            <Link className="nav-link nav-dropdown-toggle" to="/services">
+              Our Services
+              <span className="nav-plus">+</span>
+            </Link>
+            <div className="nav-dropdown-menu" aria-label="Our Services">
+              <Link to="/trailers">Tipping Trailers</Link>
+            </div>
+          </div>
           <Link className="nav-link intelligence" to="/intelligence">
             <span className="nav-star">✦</span>
             Ayro Intelligence
@@ -29,3 +37,4 @@ export default function Navbar() {
     </nav>
   )
 }
+
