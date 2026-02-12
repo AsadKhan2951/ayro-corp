@@ -1,4 +1,5 @@
 import heroVideo from '../../assets/Dubai, UAE.mp4'
+import heroLogo from '../../assets/ayro-video-title.png'
 import truckImg from '../../assets/drawing-truck.png'
 import serviceOne from '../../assets/our-serivce-1.jpg'
 import serviceTwo from '../../assets/our-serivce-2.jpg'
@@ -59,6 +60,7 @@ export default function Home() {
           playsInline
         />
         <div className="hero-overlay" />
+        <img className="hero-logo" src={heroLogo} alt="Ayro Corp" />
         <div className="hero-content">
           <div className="hero-left">
             <h1>Safety-first operations</h1>

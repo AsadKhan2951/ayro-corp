@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import footerLogo from '../../assets/ayro-footer-logo.png'
 import iconFacebook from '../../assets/Facebook.png'
@@ -11,6 +12,35 @@ export default function Footer() {
   const location = useLocation()
   const hideContact = location.pathname === '/contact'
   const hideFaq = location.pathname === '/contact'
+  const [isMobile, setIsMobile] = useState(false)
+  const [openSections, setOpenSections] = useState({
+    quick: true,
+    services: true,
+    visit: true
+  })
+
+  useEffect(() => {
+    const media = window.matchMedia('(max-width: 640px)')
+    const update = (event) => {
+      setIsMobile(event.matches)
+    }
+    update(media)
+    media.addEventListener('change', update)
+    return () => media.removeEventListener('change', update)
+  }, [])
+
+  useEffect(() => {
+    if (isMobile) {
+      setOpenSections({ quick: false, services: false, visit: false })
+    } else {
+      setOpenSections({ quick: true, services: true, visit: true })
+    }
+  }, [isMobile])
+
+  const toggleSection = (key) => {
+    if (!isMobile) return
+    setOpenSections((prev) => ({ ...prev, [key]: !prev[key] }))
+  }
 
   return (
     <>
@@ -170,9 +200,19 @@ export default function Footer() {
               </p>
             </div>
 
-            <div className="footer-column">
-              <h4>Quick Links</h4>
-              <ul>
+            <div className={`footer-column footer-accordion ${openSections.quick ? 'is-open' : ''}`}>
+              <button
+                className="footer-accordion-toggle"
+                type="button"
+                onClick={() => toggleSection('quick')}
+                aria-expanded={openSections.quick}
+              >
+                <span className="footer-accordion-title">Quick Links</span>
+                <span className="footer-accordion-icon" aria-hidden="true">
+                  {openSections.quick ? '−' : '+'}
+                </span>
+              </button>
+              <ul className="footer-accordion-list">
                 <li>About</li>
                 <li>Services</li>
                 <li>Hse</li>
@@ -182,18 +222,38 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="footer-column">
-              <h4>Services</h4>
-              <ul>
+            <div className={`footer-column footer-accordion ${openSections.services ? 'is-open' : ''}`}>
+              <button
+                className="footer-accordion-toggle"
+                type="button"
+                onClick={() => toggleSection('services')}
+                aria-expanded={openSections.services}
+              >
+                <span className="footer-accordion-title">Services</span>
+                <span className="footer-accordion-icon" aria-hidden="true">
+                  {openSections.services ? '−' : '+'}
+                </span>
+              </button>
+              <ul className="footer-accordion-list">
                 <li>Tipping Trailers</li>
                 <li>Water Bowsers</li>
                 <li>Cement Bulkers</li>
               </ul>
             </div>
 
-            <div className="footer-column footer-visit">
-              <h4>Visit Us</h4>
-              <ul>
+            <div className={`footer-column footer-visit footer-accordion ${openSections.visit ? 'is-open' : ''}`}>
+              <button
+                className="footer-accordion-toggle"
+                type="button"
+                onClick={() => toggleSection('visit')}
+                aria-expanded={openSections.visit}
+              >
+                <span className="footer-accordion-title">Visit Us</span>
+                <span className="footer-accordion-icon" aria-hidden="true">
+                  {openSections.visit ? '−' : '+'}
+                </span>
+              </button>
+              <ul className="footer-accordion-list">
                 <li>
                   <span className="visit-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none">

@@ -105,15 +105,32 @@ export default function About() {
     if (!scrollEl || !track || !inner) return undefined
 
     let rafId = 0
+    const isMobile = () => window.innerWidth <= 900
+
+    const getStickyHeight = () => {
+      const stickyEl = scrollEl.querySelector('.timeline-sticky')
+      return stickyEl ? stickyEl.offsetHeight : window.innerHeight
+    }
 
     const setScrollHeight = () => {
+      if (isMobile()) {
+        scrollEl.style.height = 'auto'
+        return
+      }
       const maxTranslate = Math.max(track.scrollWidth - inner.clientWidth, 0)
-      scrollEl.style.height = `${window.innerHeight + maxTranslate}px`
+      const stickyHeight = getStickyHeight()
+      scrollEl.style.height = `${stickyHeight + maxTranslate}px`
     }
 
     const update = () => {
+      if (isMobile()) {
+        track.style.transform = 'translate3d(0, 0, 0)'
+        setActiveIndex(0)
+        return
+      }
       const maxTranslate = Math.max(track.scrollWidth - inner.clientWidth, 0)
-      const totalScroll = scrollEl.offsetHeight - window.innerHeight
+      const stickyHeight = getStickyHeight()
+      const totalScroll = scrollEl.offsetHeight - stickyHeight
       const progress = totalScroll > 0
         ? Math.min(
             Math.max((window.scrollY - scrollEl.offsetTop) / totalScroll, 0),
@@ -130,6 +147,7 @@ export default function About() {
     }
 
     const onScroll = () => {
+      if (isMobile()) return
       if (rafId) return
       rafId = window.requestAnimationFrame(() => {
         update()
