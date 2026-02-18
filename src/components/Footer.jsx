@@ -269,7 +269,7 @@ export default function Footer() {
                       />
                     </svg>
                   </span>
-                  E Street, Block 4, Clifton, Karachi
+                  CWS-1V-001325, 26th Floor, Amber Gem Tower, Ajman
                 </li>
                 <li>
                   <span className="visit-icon" aria-hidden="true">
@@ -282,7 +282,7 @@ export default function Footer() {
                       />
                     </svg>
                   </span>
-                  0300 702 2061
+                  0508881375
                 </li>
                 <li>
                   <span className="visit-icon" aria-hidden="true">
