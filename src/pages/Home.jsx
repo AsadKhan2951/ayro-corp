@@ -82,7 +82,7 @@ export default function Home() {
 
       <section className="service-section">
         <div className="section-inner">
-          <div className="section-top">
+          {/* <div className="section-top">
             <motion.h2
               variants={revealUp}
               initial="hidden"
@@ -109,7 +109,7 @@ export default function Home() {
                 <div className="stat-label">Lorem ipsum</div>
               </motion.div>
             </motion.div>
-          </div>
+          </div> */}
 
           <BlurText
             className="section-lead"

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import footerLogo from '../../assets/ayro-footer-logo.png'
 import iconFacebook from '../../assets/Facebook.png'
 import iconInstagram from '../../assets/Instagram.png'
@@ -194,9 +194,9 @@ export default function Footer() {
             <div className="footer-brand">
               <img src={footerLogo} alt="Ayro Corp" />
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy text
-                ever since the 1500s
+                AYRO Corp delivers reliable transport solutions across tipping
+                trailers, water tankers, and bulk logistics. We focus on safety,
+                precision, and on-time operations to keep critical projects moving.
               </p>
             </div>
 
@@ -213,12 +213,11 @@ export default function Footer() {
                 </span>
               </button>
               <ul className="footer-accordion-list">
-                <li>About</li>
-                <li>Services</li>
-                <li>Hse</li>
-                <li>Ayro Intelligence</li>
-                <li>Faqs</li>
-                <li>Contact us</li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/services">Services</Link></li>
+                <li><Link to="/intelligence">Ayro Intelligence</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
               </ul>
             </div>
 
@@ -235,9 +234,8 @@ export default function Footer() {
                 </span>
               </button>
               <ul className="footer-accordion-list">
-                <li>Tipping Trailers</li>
-                <li>Water Bowsers</li>
-                <li>Cement Bulkers</li>
+                <li><Link to="/services">All Services</Link></li>
+                <li><Link to="/trailers">Tipping Trailers</Link></li>
               </ul>
             </div>
 
@@ -316,7 +314,7 @@ export default function Footer() {
                       />
                     </svg>
                   </span>
-                  info@yourinfo.com
+                  info@ayrocorp.ae
                 </li>
               </ul>
               <div className="footer-socials">
@@ -332,14 +330,7 @@ export default function Footer() {
           <div className="footer-divider border-reveal" data-border-reveal />
 
           <div className="footer-bottom">
-            <span>
-              Copyright Â© 2026 All Rights Reserved. Powered by rad.
-            </span>
-            <div className="footer-links">
-              <span>Privacy Policy</span>
-              <span>Terms of Service</span>
-              <span>Cookies Settings</span>
-            </div>
+            <span>Copyright (c) 2026 All Rights Reserved. Powered by rad.</span>
           </div>
         </div>
       </footer>
