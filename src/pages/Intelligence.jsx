@@ -3,6 +3,8 @@ import truckWire from '../../assets/ayro-intelligence-truck-img.png'
 import svgLine from '../../assets/svg-line.svg'
 import transportationImg from '../../assets/transporation-industry.png'
 import waveImg from '../../assets/3d-animated-img.png'
+import legacyImg from '../../assets/legacy-operation.jpg'
+import futureImg from '../../assets/future-transpotaion.jpg'
 
 export default function Intelligence() {
   return (
@@ -61,7 +63,7 @@ export default function Intelligence() {
 
           <div className="exists-line" aria-hidden="true">
             <img src={svgLine} alt="" />
-            <span className="line-scan" />
+            {/* <span className="line-scan" /> */}
           </div>
 
           <div className="exists-right">
@@ -386,17 +388,96 @@ export default function Intelligence() {
               <li>Cement bulkers and high-capacity asset movement</li>
               <li>Safety, compliance, and environmental responsibility</li>
             </ul>
-            <p className="built-footnote">
+            
+          </div>
+          
+
+          <div className="built-image">
+            <img src={transportationImg} alt="Transportation industry" />
+          </div>
+        </div>
+        <p className="built-footnote">
               It reflects the operational DNA of AYRO — precision,
               accountability, and scale — while introducing a new layer of
               intelligence that elevates how transport businesses operate in the
               field.
             </p>
-          </div>
+      </section>
 
-          <div className="built-image">
-            <img src={transportationImg} alt="Transportation industry" />
+      <section
+        className="intelligence-legacy"
+        style={{ backgroundImage: `url(${legacyImg})` }}
+      >
+        <div className="legacy-overlay" aria-hidden="true" />
+        <div className="legacy-inner">
+          <div className="legacy-content">
+            <h2>
+              From Legacy Operations
+              <br />
+              to Intelligent Mobility
+            </h2>
+            <p>
+              AYRO brings with it the operational experience and mindset of a
+              proven transportation legacy, linked to its sister concern Pakistan
+              Tankers, while operating with a modern, forward-looking approach in
+              the UAE market.
+            </p>
+            <p className="legacy-subtitle">
+              AYRO Intelligence represents the natural evolution of that legacy:
+            </p>
+            <ul className="legacy-list">
+              <li>Same values</li>
+              <li>Same professionalism</li>
+              <li>A smarter, AI-driven future</li>
+            </ul>
+            <p className="legacy-footnote">
+              This initiative ensures that AYRO — and the businesses it serves —
+              remain future-ready in an increasingly data-driven world.
+            </p>
           </div>
+        </div>
+      </section>
+
+      <section className="intelligence-future">
+        <div className="future-inner">
+          <div className="future-image">
+            <img src={futureImg} alt="Future transportation" />
+          </div>
+          <div className="future-content">
+            <h2>
+              Shaping the Future
+              <br />
+              of Transportation
+            </h2>
+            <p className="future-subtitle">The future of transportation will be:</p>
+            <ul className="future-list">
+              <li>Predictive, not reactive</li>
+              <li>Intelligent, not manual</li>
+              <li>Proactive, not delayed</li>
+            </ul>
+            <div className="future-divider" />
+            <p className="future-commit">
+              AYRO Intelligence is our
+              <br />
+              commitment to that future.
+            </p>
+            <p className="future-note">
+              As the transportation industry moves toward smarter infrastructure
+              and AI-assisted operations, AYRO Intelligence positions businesses
+              to lead — not follow — the transformation.
+            </p>
+          </div>
+        </div>
+
+        <div className="future-cta">
+          <div>
+            <h3>AYRO Intelligence</h3>
+            <p>Intelligence that moves you forward</p>
+          </div>
+          <button type="button" className="future-cta-btn">
+            Talk to our experts
+            <span className="future-cta-icon">↗</span>
+          </button>
         </div>
       </section>
     </>
