@@ -5,11 +5,21 @@ import arrowWhite from '../../assets/btn-arrow-white.png'
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [isSticky, setIsSticky] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
     setMenuOpen(false)
   }, [location.pathname])
+
+  useEffect(() => {
+    const onScroll = () => {
+      setIsSticky(window.scrollY > 40)
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : ''
@@ -19,7 +29,7 @@ export default function Navbar() {
   }, [menuOpen])
 
   return (
-    <nav className="site-nav">
+    <nav className={`site-nav ${isSticky ? 'is-sticky' : ''}`}>
       <div className="nav-inner">
         <Link className="logo" to="/">
           <img src={logo} alt="Ayro Corp" />

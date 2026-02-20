@@ -316,10 +316,7 @@ export default function Home() {
               <span>AYRO</span> Intelligence
             </h2>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
+              AYRO Intelligence is our next-generation AI engine designed specifically for the transportation and logistics sector. Built on real operational challenges, AYRO Intelligence enables transport businesses to run smarter, faster, and more proactively in an industry where time, safety, cost, and precision define success.
             </p>
             <button className="intelligence-cta" type="button">
               Learn More
