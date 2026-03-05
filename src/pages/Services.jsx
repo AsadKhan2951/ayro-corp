@@ -1,7 +1,7 @@
 import innerBanner from '../../assets/inner-hero-banner.jpg'
-import serviceOne from '../../assets/our-serivce-1.jpg'
-import serviceTwo from '../../assets/our-serivce-2.jpg'
-import serviceThree from '../../assets/Hse-img-7.png'
+import serviceOne from '../../assets/our-serivce-1.png'
+import serviceTwo from '../../assets/our-serivce-2.png'
+import serviceThree from '../../assets/our-serivce-3.png'
 import arrowBlack from '../../assets/btn-arrow-black.png'
 
 export default function Services() {

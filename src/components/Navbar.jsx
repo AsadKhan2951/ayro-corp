@@ -44,6 +44,7 @@ export default function Navbar() {
             </Link>
             <div className="nav-dropdown-menu" aria-label="Our Services">
               <Link to="/trailers">Tipping Trailers</Link>
+              <Link to="/hse">HSE</Link>
             </div>
           </div>
           <Link className="nav-link intelligence" to="/intelligence">
@@ -91,6 +92,7 @@ export default function Navbar() {
             <span className="mobile-label">Services</span>
             <Link to="/services" className="mobile-sublink">All</Link>
             <Link to="/trailers" className="mobile-sublink">Tipping Trailers</Link>
+            <Link to="/hse" className="mobile-sublink">HSE</Link>
           </div>
           <div className="mobile-divider" />
           <Link to="/intelligence" className="mobile-link">Ayro Intelligence</Link>

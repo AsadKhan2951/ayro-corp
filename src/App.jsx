@@ -9,6 +9,7 @@ import Services from './pages/Services'
 import Trailers from './pages/Trailers'
 import Contact from './pages/Contact'
 import Intelligence from './pages/Intelligence'
+import HSE from './pages/HSE'
 
 function BorderRevealObserver() {
   const location = useLocation()
@@ -95,6 +96,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/trailers" element={<Trailers />} />
         <Route path="/intelligence" element={<Intelligence />} />
+        <Route path="/hse" element={<HSE />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />

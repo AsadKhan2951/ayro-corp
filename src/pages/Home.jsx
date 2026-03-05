@@ -1,8 +1,9 @@
 import heroVideo from '../../assets/Dubai, UAE.mp4'
 import heroLogo from '../../assets/ayro-video-title.png'
-import truckImg from '../../assets/drawing-truck.png'
-import serviceOne from '../../assets/our-serivce-1.jpg'
-import serviceTwo from '../../assets/our-serivce-2.jpg'
+import homeAboutImg from '../../assets/home-about-us-img.png'
+import serviceOne from '../../assets/our-serivce-1.png'
+import serviceTwo from '../../assets/our-serivce-2.png'
+import serviceThree from '../../assets/our-serivce-3.png'
 import hseLeft from '../../assets/tuck-img-left.png'
 import hseRight from '../../assets/tuck-img-right.png'
 import hseBg from '../../assets/bg-blue-img.jpg'
@@ -17,37 +18,10 @@ import intelligenceImg from '../../assets/intelligence-img.jpg'
 import hseGradient from '../../assets/bg-gradient.png'
 import arrowWhite from '../../assets/btn-arrow-white.png'
 import arrowBlack from '../../assets/btn-arrow-black.png'
-import { motion } from 'motion/react'
-import BlurText from '../components/reactbits/BlurText/BlurText'
+import whyAyroImg from '../../assets/why-ayro.png'
 import DotGrid from '../components/reactbits/DotGrid/DotGrid'
 
 export default function Home() {
-  const revealUp = {
-    hidden: { opacity: 0, y: 24 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.22, 0.61, 0.36, 1] }
-    }
-  }
-
-  const cardStagger = {
-    hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.12, delayChildren: 0.05 }
-    }
-  }
-
-  const cardReveal = {
-    hidden: { opacity: 0, y: 18, scale: 0.98 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { duration: 0.5, ease: [0.22, 0.61, 0.36, 1] }
-    }
-  }
-
   return (
     <>
       <section className="home-hero">
@@ -82,69 +56,26 @@ export default function Home() {
 
       <section className="service-section">
         <div className="section-inner">
-          {/* <div className="section-top">
-            <motion.h2
-              variants={revealUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ amount: 0.5, once: false }}
-            >
-              Build to hold
-              <br />
-              Ambition
-            </motion.h2>
-            <motion.div
-              className="stat-cards"
-              variants={cardStagger}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ amount: 0.4, once: false }}
-            >
-              <motion.div className="stat-card" variants={cardReveal}>
-                <div className="stat-value">150+</div>
-                <div className="stat-label">Lorem ipsum</div>
-              </motion.div>
-              <motion.div className="stat-card" variants={cardReveal}>
-                <div className="stat-value">150+</div>
-                <div className="stat-label">Lorem ipsum</div>
-              </motion.div>
-            </motion.div>
-          </div> */}
-
-          <BlurText
-            className="section-lead"
-            text="Our water tanker services redefine reliability through a seamless blend of efficiency, safety, and performance."
-            delay={80}
-            animateBy="words"
-            direction="top"
-            threshold={0.25}
-          />
-
-          <div className="section-bottom">
-            <div className="truck-wrap">
-              <img src={truckImg} alt="Water tanker truck" />
+          <div className="home-about">
+            <div className="home-about-media">
+              <img src={homeAboutImg} alt="AYRO logistics fleet" />
             </div>
-            <div className="about-block">
-              <div className="about-title">
-                <span>About us</span>
-                <span
-                  className="about-line border-reveal"
-                  data-border-reveal
-                />
-              </div>
-              <p>
-                Established in 2025, the company builds on a strong foundation
-                of experience through its close linkage with its sister concern,
-                Pakistan Tankers. While operating as a separate entity, it
-                carries forward the same mindset, standards, and disciplined
-                operational approach. The prestige and legacy developed over
-                years of trusted service seamlessly extend across borders. With
-                shared values and a commitment to professionalism, both
-                organizations reflect consistency and reliability. This
-                cross-border heritage reinforces trust while embracing modern,
-                efficient operations. Positioned in Dubai, the company
-                represents a blend of proven expertise and forward-thinking
-                practices.
+            <div className="home-about-content">
+              <h2>About us</h2>
+              <p className="home-about-subtitle">
+                A Modern Logistics Company Built on
+                <br />
+                Proven Foundations
+              </p>
+              <div className="home-about-line" />
+              <p className="home-about-copy">
+                AYRO Corp is a UAE-based logistics company delivering high-capacity
+                transport solutions for construction and infrastructure projects.
+                Established in 2025, AYRO brings forward the operational discipline,
+                safety culture, and professionalism of its sister concern, Pakistan
+                Tankers. While operating independently in the UAE market, our
+                standards reflect cross-border expertise. Different companies. Same
+                mindset. Same commitment to excellence.
               </p>
             </div>
           </div>
@@ -206,7 +137,7 @@ export default function Home() {
 
           <div className="service-card service-reveal">
             <div className="service-image">
-              <img src={hse7} alt="Cement bulker" />
+              <img src={serviceThree} alt="Cement bulker" />
             </div>
             
           </div>
@@ -225,6 +156,24 @@ export default function Home() {
                 </span>
               </button>
             </div>
+        </div>
+      </section>
+
+      <section className="why-ayro">
+        <div className="why-ayro-inner">
+          <div className="why-ayro-media">
+            <img src={whyAyroImg} alt="Why AYRO" />
+          </div>
+          <div className="why-ayro-content">
+            <h2>Why AYRO</h2>
+            <ul>
+              <li>Modern fleet equipped with premium hydraulic systems</li>
+              <li>Strict HSE compliance and safety-first operations</li>
+              <li>Experienced operators and trained drivers</li>
+              <li>UAE-focused operational infrastructure</li>
+              <li>Backed by cross-border legacy standards</li>
+            </ul>
+          </div>
         </div>
       </section>
 

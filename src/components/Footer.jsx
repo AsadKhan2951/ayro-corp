@@ -236,6 +236,7 @@ export default function Footer() {
               <ul className="footer-accordion-list">
                 <li><Link to="/services">All Services</Link></li>
                 <li><Link to="/trailers">Tipping Trailers</Link></li>
+                <li><Link to="/hse">HSE</Link></li>
               </ul>
             </div>
 
