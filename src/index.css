@@ -1,4 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap');
+@font-face {
+  font-family: 'Avenir LT Pro';
+  src: url('/avenir-lt-pro/AvenirLTProLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir LT Pro';
+  src: url('/avenir-lt-pro/AvenirLTProLightOblique.otf') format('opentype');
+  font-weight: 300;
+  font-style: oblique;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir LT Pro';
+  src: url('/avenir-lt-pro/AvenirLTProBook.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir LT Pro';
+  src: url('/avenir-lt-pro/AvenirLTProOblique.otf') format('opentype');
+  font-weight: 400;
+  font-style: oblique;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir LT Pro';
+  src: url('/avenir-lt-pro/AvenirLTProMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir LT Pro';
+  src: url('/avenir-lt-pro/AvenirLTProMediumOblique.otf') format('opentype');
+  font-weight: 500;
+  font-style: oblique;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir LT Pro';
+  src: url('/avenir-lt-pro/AvenirLTProHeavy.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir LT Pro';
+  src: url('/avenir-lt-pro/AvenirLTProHeavyOblique.otf') format('opentype');
+  font-weight: 700;
+  font-style: oblique;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir LT Pro';
+  src: url('/avenir-lt-pro/AvenirLTProBlack.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir LT Pro';
+  src: url('/avenir-lt-pro/AvenirLTProBlackOblique.otf') format('opentype');
+  font-weight: 900;
+  font-style: oblique;
+  font-display: swap;
+}
 
 *,
 *::before,
@@ -17,7 +95,7 @@
 
 body {
   margin: 0;
-  font-family: 'Jost', system-ui, -apple-system, sans-serif;
+  font-family: 'Avenir LT Pro', system-ui, -apple-system, sans-serif;
   background: var(--bg-dark);
   color: var(--text);
 }
@@ -409,9 +487,9 @@ a {
     gap: 48px;
 }
 
-.hero-left h1 {
+  .hero-left h1 {
     margin: 0;
-    font-family: 'Jost', system-ui, -apple-system, sans-serif;
+    font-family: 'Avenir LT Pro', system-ui, -apple-system, sans-serif;
     font-weight: 500;
     letter-spacing: 0.2px;
     font-size: 48px;
