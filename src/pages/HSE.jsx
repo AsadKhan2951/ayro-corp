@@ -22,7 +22,7 @@ export default function HSE() {
   return (
     <>
       <section
-        className="inner-hero"
+        className="inner-hero inner-hero--cover"
         style={{ backgroundImage: `url(${hseBanner})` }}
       >
         <div className="inner-hero-overlay" />

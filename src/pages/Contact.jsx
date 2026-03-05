@@ -46,7 +46,7 @@ export default function Contact() {
                 <input type="text" />
               </label>
               <label>
-                Last Name
+                Company Name
                 <input type="text" />
               </label>
             </div>
@@ -57,8 +57,13 @@ export default function Contact() {
             </label>
 
             <label>
-              Tanker
-              <input type="text" />
+              Service Required
+              <select>
+                <option value="">Select a service</option>
+                <option value="tipping-trailers">Tipping Trailers</option>
+                <option value="water-tanker">Water Tanker</option>
+                <option value="cement-bulker">Cement Bulker</option>
+              </select>
             </label>
 
             <label>
@@ -67,7 +72,7 @@ export default function Contact() {
             </label>
 
             <label>
-              Message
+              Project Details
               <textarea rows="4" />
             </label>
 

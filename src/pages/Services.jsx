@@ -1,4 +1,4 @@
-import innerBanner from '../../assets/inner-hero-banner.jpg'
+import innerBanner from '../../assets/our-service-top-banner.png'
 import serviceOne from '../../assets/our-serivce-1.png'
 import serviceTwo from '../../assets/our-serivce-2.png'
 import serviceThree from '../../assets/our-serivce-3.png'
@@ -50,9 +50,14 @@ export default function Services() {
             <div>
               <h3>Tipping Trailers</h3>
               <p>
-                Heavy-duty tipping trailer operations supporting construction,
-                infrastructure, and material handling projects.
+                Tri-Axle and 2-Axle tipping trailers designed for efficient bulk
+                material transport.
               </p>
+              <ul className="service-list">
+                <li>Equipped with HYVA hydraulic jacks</li>
+                <li>Loading capacity up to 45 CBM</li>
+                <li>Suitable for construction materials and bulk transport</li>
+              </ul>
             </div>
             <button className="learn-more" type="button">
               Learn More
@@ -71,9 +76,14 @@ export default function Services() {
             <div>
               <h3>Water Tanker</h3>
               <p>
-                Reliable and efficient water transportation solutions designed
-                to meet commercial and industrial demands.
+                Sweet and Salt water supply for construction, industrial, and
+                site operations.
               </p>
+              <span className="service-label">Available capacities:</span>
+              <ul className="service-list">
+                <li>10,000 gallons</li>
+                <li>5,000 gallons</li>
+              </ul>
             </div>
             <button className="learn-more" type="button">
               Learn More
@@ -91,10 +101,13 @@ export default function Services() {
           <div className="service-meta border-reveal-bottom" data-border-reveal>
             <div>
               <h3>Cement Bulker</h3>
-              <p>
-                Safe and precise bulk cement transportation ensuring timely
-                delivery for large-scale developments.
-              </p>
+              <p>Bulk cement transportation solutions.</p>
+              <span className="service-label">Available capacities:</span>
+              <ul className="service-list">
+                <li>40 tons</li>
+                <li>50 tons</li>
+                <li>70 tons</li>
+              </ul>
             </div>
             <button className="learn-more" type="button">
               Learn More

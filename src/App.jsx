@@ -6,7 +6,6 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
-import Trailers from './pages/Trailers'
 import Contact from './pages/Contact'
 import Intelligence from './pages/Intelligence'
 import HSE from './pages/HSE'
@@ -105,7 +104,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
-        <Route path="/trailers" element={<Trailers />} />
         <Route path="/intelligence" element={<Intelligence />} />
         <Route path="/hse" element={<HSE />} />
         <Route path="/contact" element={<Contact />} />

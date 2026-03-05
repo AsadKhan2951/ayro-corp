@@ -37,16 +37,8 @@ export default function Navbar() {
         <div className="nav-links">
           <Link className="nav-link" to="/">Home</Link>
           <Link className="nav-link" to="/about">About</Link>
-          <div className="nav-dropdown">
-            <Link className="nav-link nav-dropdown-toggle" to="/services">
-              Our Services
-              <span className="nav-plus">+</span>
-            </Link>
-            <div className="nav-dropdown-menu" aria-label="Our Services">
-              <Link to="/trailers">Tipping Trailers</Link>
-              <Link to="/hse">HSE</Link>
-            </div>
-          </div>
+          <Link className="nav-link" to="/services">Our Services</Link>
+          <Link className="nav-link" to="/hse">HSE</Link>
           <Link className="nav-link intelligence" to="/intelligence">
             <span className="nav-star">*</span>
             Ayro Intelligence
@@ -88,12 +80,9 @@ export default function Navbar() {
           <div className="mobile-divider" />
           <Link to="/about" className="mobile-link">About</Link>
           <div className="mobile-divider" />
-          <div className="mobile-group">
-            <span className="mobile-label">Services</span>
-            <Link to="/services" className="mobile-sublink">All</Link>
-            <Link to="/trailers" className="mobile-sublink">Tipping Trailers</Link>
-            <Link to="/hse" className="mobile-sublink">HSE</Link>
-          </div>
+          <Link to="/services" className="mobile-link">Our Services</Link>
+          <div className="mobile-divider" />
+          <Link to="/hse" className="mobile-link">HSE</Link>
           <div className="mobile-divider" />
           <Link to="/intelligence" className="mobile-link">Ayro Intelligence</Link>
           <div className="mobile-divider" />

@@ -10,8 +10,12 @@ import arrowBlack from '../../assets/btn-arrow-black.png'
 
 export default function Footer() {
   const location = useLocation()
-  const hideContact = location.pathname === '/contact'
-  const hideFaq = location.pathname === '/contact'
+  const hideContact = location.pathname === '/contact' || location.pathname === '/hse'
+  const hideFaq =
+    location.pathname === '/' ||
+    location.pathname === '/about' ||
+    location.pathname === '/hse' ||
+    location.pathname === '/contact'
   const [isMobile, setIsMobile] = useState(false)
   const [openSections, setOpenSections] = useState({
     quick: true,
@@ -146,36 +150,41 @@ export default function Footer() {
             </div>
 
             <form className="contact-form">
-              <div className="contact-row">
-                <label>
-                  Name
-                  <input type="text" />
-                </label>
-                <label>
-                  Last Name
-                  <input type="text" />
-                </label>
-              </div>
-
+            <div className="contact-row">
               <label>
-                Email
-                <input type="email" />
-              </label>
-
-              <label>
-                Tanker
+                Name
                 <input type="text" />
               </label>
-
               <label>
-                Phone No.
-                <input type="tel" />
+                Company Name
+                <input type="text" />
               </label>
+            </div>
 
-              <label>
-                Message
-                <textarea rows="4" />
-              </label>
+            <label>
+              Email
+              <input type="email" />
+            </label>
+
+            <label>
+              Service Required
+              <select>
+                <option value="">Select a service</option>
+                <option value="tipping-trailers">Tipping Trailers</option>
+                <option value="water-tanker">Water Tanker</option>
+                <option value="cement-bulker">Cement Bulker</option>
+              </select>
+            </label>
+
+            <label>
+              Phone No.
+              <input type="tel" />
+            </label>
+
+            <label>
+              Project Details
+              <textarea rows="4" />
+            </label>
 
               <button className="contact-submit" type="button">
                 Submit
@@ -235,7 +244,6 @@ export default function Footer() {
               </button>
               <ul className="footer-accordion-list">
                 <li><Link to="/services">All Services</Link></li>
-                <li><Link to="/trailers">Tipping Trailers</Link></li>
                 <li><Link to="/hse">HSE</Link></li>
               </ul>
             </div>

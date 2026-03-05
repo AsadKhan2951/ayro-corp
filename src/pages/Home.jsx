@@ -41,8 +41,7 @@ export default function Home() {
           </div>
           <div className="hero-right">
             <p>
-              We've built our reputation by taking even the boldest visions and
-              making them achievable realities.
+              Modern logistics solutions in the UAE delivering construction, infrastructure, and industrial transport with efficiency, safety, and reliability.
             </p>
             <button className="hero-cta" type="button">
               Contact Us
