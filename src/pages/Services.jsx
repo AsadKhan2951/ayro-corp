@@ -1,7 +1,7 @@
 import innerBanner from '../../assets/our-service-top-banner.png'
-import serviceOne from '../../assets/our-serivce-1.png'
-import serviceTwo from '../../assets/our-serivce-2.png'
-import serviceThree from '../../assets/our-serivce-3.png'
+import tippingVideo from '../../assets/Tipping trailer.mp4'
+import waterVideo from '../../assets/Water tanker.mp4'
+import cementVideo from '../../assets/Cement.mp4'
 import arrowBlack from '../../assets/btn-arrow-black.png'
 
 export default function Services() {
@@ -43,7 +43,13 @@ export default function Services() {
 
           <div className="service-card service-reveal">
             <div className="service-image">
-              <img src={serviceOne} alt="Tipping trailers" />
+              <video
+                src={tippingVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
             </div>
           </div>
           <div className="service-meta border-reveal-bottom" data-border-reveal>
@@ -69,7 +75,13 @@ export default function Services() {
 
           <div className="service-card service-reveal">
             <div className="service-image">
-              <img src={serviceTwo} alt="Water tanker" />
+              <video
+                src={waterVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
             </div>
           </div>
           <div className="service-meta border-reveal-bottom" data-border-reveal>
@@ -95,7 +107,13 @@ export default function Services() {
 
           <div className="service-card service-reveal">
             <div className="service-image">
-              <img src={serviceThree} alt="Cement bulker" />
+              <video
+                src={cementVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
             </div>
           </div>
           <div className="service-meta border-reveal-bottom" data-border-reveal>

@@ -544,7 +544,8 @@ a {
     align-items: flex-start;
     gap: 20px;
   }
-  .service-image img {
+  .service-image img,
+  .service-image video {
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
@@ -931,7 +932,8 @@ a {
   }
 }
 
-.service-reveal .service-image img {
+.service-reveal .service-image img,
+.service-reveal .service-image video {
   opacity: 0;
   transform: translateY(var(--reveal-y));
   clip-path: var(--reveal-clip);
@@ -939,11 +941,13 @@ a {
   will-change: transform, clip-path, opacity;
 }
 
-.service-reveal.is-revealed .service-image img {
+.service-reveal.is-revealed .service-image img,
+.service-reveal.is-revealed .service-image video {
   animation: serviceRevealIn 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 
-.service-reveal.is-hidden .service-image img {
+.service-reveal.is-hidden .service-image img,
+.service-reveal.is-hidden .service-image video {
   animation: serviceRevealOut 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 
@@ -953,12 +957,14 @@ a {
   justify-content: center;
 }
 
-.service-image img {
+.service-image img,
+.service-image video {
     width: 100%;
     max-width: 1050px;
     height: 900px;
     border-radius: 2px;
     display: block;
+    object-fit: cover;
 }
 
 .service-meta {

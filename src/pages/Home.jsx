@@ -1,9 +1,9 @@
 import heroVideo from '../../assets/Dubai, UAE.mp4'
 import heroLogo from '../../assets/ayro-video-title.png'
 import homeAboutImg from '../../assets/home-about-us-img.png'
-import serviceOne from '../../assets/our-serivce-1.png'
-import serviceTwo from '../../assets/our-serivce-2.png'
-import serviceThree from '../../assets/our-serivce-3.png'
+import tippingVideo from '../../assets/Tipping trailer.mp4'
+import waterVideo from '../../assets/Water tanker.mp4'
+import cementVideo from '../../assets/Cement.mp4'
 import hseLeft from '../../assets/tuck-img-left.png'
 import hseRight from '../../assets/tuck-img-right.png'
 import hseBg from '../../assets/bg-blue-img.jpg'
@@ -93,7 +93,13 @@ export default function Home() {
 
           <div className="service-card service-reveal">
             <div className="service-image">
-              <img src={serviceOne} alt="Tipping trailers" />
+              <video
+                src={tippingVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
             </div>
           </div>
           <div className="service-meta border-reveal-bottom" data-border-reveal>
@@ -114,7 +120,13 @@ export default function Home() {
 
           <div className="service-card service-reveal">
             <div className="service-image">
-              <img src={serviceTwo} alt="Water tanker" />
+              <video
+                src={waterVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
             </div>
             
           </div>
@@ -136,7 +148,13 @@ export default function Home() {
 
           <div className="service-card service-reveal">
             <div className="service-image">
-              <img src={serviceThree} alt="Cement bulker" />
+              <video
+                src={cementVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
             </div>
             
           </div>
