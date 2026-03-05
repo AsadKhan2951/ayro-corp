@@ -77,6 +77,16 @@ function BorderRevealObserver() {
   return null
 }
 
+function ScrollToTop() {
+  const location = useLocation()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+  }, [location.pathname])
+
+  return null
+}
+
 function App() {
   useEffect(() => {
     const lenis = new Lenis({ autoRaf: true })
@@ -88,6 +98,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <BorderRevealObserver />
       <Navbar />
       <Routes>
